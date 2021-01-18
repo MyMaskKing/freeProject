@@ -2,7 +2,7 @@
 	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <meta charset="UTF-8">
-<title>意见采集</title>
+<title>意见更新</title>
 
 <%-- JSP Configure[Start] --%>
 <%@ page isELIgnored="false"%>
@@ -52,41 +52,33 @@
 		loadDateComponent();
 		// All button enable
 		setSearchDisabled();
-		setUpdateDisabled();
-		setRegisteredEnabled("提交意见");
-		setBackBtnEnabled("返回首页");
-		setBackUrl('<%=request.getContextPath()%>/index/init');
+		setUpdateEnabled("更新");
+		setRegisteredDisabled();
+		setBackBtnEnabled("返回");
+		setBackUrl('<%=request.getContextPath()%>/bsc0010/result');
 		getInputSizeByMaxLength("opinionText","opinionInputText");
 	});
 </script>
 <%-- Myself define JS [End] --%>
 <div style="padding: 10px;">
-	<c:if test="${submitMark == 1 }">
-		<div class="alert alert-success">
-			您已成功完成提交。
-			<a href="#" onclick="transitionHtml(null,'result')">点击查看 <span class="badge">☞</span></a>
-			<button type="button" class="close" data-dismiss="alert"
-				aria-hidden="true">&times;</button>
-		</div>
-	</c:if>
-	<%-- 意见收集[Start] --%>
 	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
 		<form role="form" id="commonForm" method="post">
 			<div class="form-group">
 				<label for="name">意见收集处</label>
-				<textarea class="form-control" style="height:350px" placeholder="请输入您需要解决的问题"
-					name="opinionText" maxlength="1000" id="opinionText"></textarea>
-				<p class="help-block">感谢您提出的宝贵意见，我们将会对其进行分析并修正。
+				<input type="hidden" name="id" value="${bsc0010Result.dataId }">
+				<textarea class="form-control" style="height:350px"
+					name="opinionContent" maxlength="100000" id="opinionText">${bsc0010Result.opinionText }</textarea>
 				<span class="help-block" style="float:right">还可以输入
 				<span  id="opinionInputText"></span>
 				字
 				</span>
-				</p>
-				
 			</div>
+			<p class="help-block">
+				如果您要进行回复，请在【-----------------------------------------------------------】下面进行内容的回复。
+				<BR>
+				如果您要需要修改您提出的意见，请删除【-----------------------------------------------------------】。
+			</p>
 		</form>
-		
-		<button type="button" class="btn btn-default" onclick="transitionHtml(null,'result')">意见箱</button>
 	</div>
 	<%-- 意见收集[End] --%>
 

@@ -56,14 +56,14 @@ $(function() {
 	setUpdateDisabled();
 	setRegisteredDisabled();
 	setBackBtnEnabled();
-	setBackUrl('<%=request.getContextPath()%>/sys0302/init');
+	setBackUrl('<%=request.getContextPath()%>/bsc0010/init');
 });
 
 function showSys30201DelDialog(dataId){
 	$.ajax({
 			type:"POST",
 			async: true,
-			url: '<%=request.getContextPath()%>/sys0302/result', 
+			url: '<%=request.getContextPath()%>/bsc0010/result', 
 			dataType:"json",
 			data:{formData:"dataId=" + dataId},
 			success: function(data){
@@ -71,10 +71,10 @@ function showSys30201DelDialog(dataId){
 					Window.COMMON_DIALOGS1_HTML = 
 						"<div class='well'>"
 						+ "<ul class='list-group'>"
-						+ "<li class='list-group-item'>建议内容: "+data.sys0302UpdOrDelDto[0].opinionText+"</li>"
+						+ "<li class='list-group-item'>建议内容: "+data.bsc0010UpdOrDelDto[0].opinionText+"</li>"
 						+ "</ul>"
 						+ "</div>";
-					Window.AJAX_JSON_DATA='flg=del&dataId='+data.sys0302UpdOrDelDto[0].dataId
+					Window.AJAX_JSON_DATA='flg=del&dataId='+data.bsc0010UpdOrDelDto[0].dataId
 					commonDialogs1confirm("删除","delete");
 				}
 			},
@@ -117,27 +117,27 @@ function executeSys30201Upd(dataId){
 					</tr>
 				</thead>
 				<tbody>
-				<c:forEach items="${sys0302From }" var="sys0302Result" varStatus="sys0302ResultIndex">
+				<c:forEach items="${bsc0010From }" var="bsc0010Result" varStatus="bsc0010ResultIndex">
 					<tr>
-						<td class="text-right">${ sys0302ResultIndex.index + 1 }</td>
+						<td class="text-right">${ bsc0010ResultIndex.index + 1 }</td>
 						<td>
-							<pre class="bg-info">${sys0302Result.opinionText }</pre>
+							<pre class="bg-info">${bsc0010Result.opinionText }</pre>
 						</td>
-						<td class ="text-center" valign="middle"><fmt:formatDate value="${sys0302Result.insDate }" pattern="yyyy/MM/dd hh:mm:ss"/> </td>
-						<td class ="text-center" valign="middle">${sys0302Result.insUserName }</td>
-						<td class ="text-center" valign="middle"><fmt:formatDate value="${sys0302Result.updDate }" pattern="yyyy/MM/dd hh:mm:ss"/></td>
-						<td class ="text-center" valign="middle">${sys0302Result.updUserName }</td>
+						<td class ="text-center" valign="middle"><fmt:formatDate value="${bsc0010Result.insDate }" pattern="yyyy/MM/dd hh:mm:ss"/> </td>
+						<td class ="text-center" valign="middle">${bsc0010Result.insUserName }</td>
+						<td class ="text-center" valign="middle"><fmt:formatDate value="${bsc0010Result.updDate }" pattern="yyyy/MM/dd hh:mm:ss"/></td>
+						<td class ="text-center" valign="middle">${bsc0010Result.updUserName }</td>
 						<td class ="text-center" valign="middle">
 							<c:choose>
 								<%-- 该条建议的所有者时，可以更新和删除 --%>
-								<c:when test="${sessionScope.userId eq sys0302Result.insUserId}">
-									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${sys0302Result.dataId })">修正</button>
-									<button type="button" class="btn btn-primary"  onclick="showSys30201DelDialog(${sys0302Result.dataId })">删除</button>
+								<c:when test="${sessionScope.userId eq bsc0010Result.insUserId}">
+									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${bsc0010Result.dataId })">修正</button>
+									<button type="button" class="btn btn-primary"  onclick="showSys30201DelDialog(${bsc0010Result.dataId })">删除</button>
 								</c:when>
 								<%-- 管理员时，可以更新和删除 --%>
 								<c:when test="${sessionScope.userAuthor eq 5}">
-									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${sys0302Result.dataId })">修正</button>
-									<button type="button" class="btn btn-primary"  onclick="showSys30201DelDialog(${sys0302Result.dataId })">删除</button>
+									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${bsc0010Result.dataId })">修正</button>
+									<button type="button" class="btn btn-primary"  onclick="showSys30201DelDialog(${bsc0010Result.dataId })">删除</button>
 								</c:when>
 								<c:otherwise>
 									<span style="font-size:10px">他人提出的意见，您只能查看</span>

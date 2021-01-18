@@ -16,14 +16,14 @@ import free.com.bean.studenty.Sty0000From;
 import free.com.bean.studenty.Sty0000ResultDto;
 import free.com.common.CommonUtil;
 import free.com.common.SolrCommon;
-import free.com.service.system.Sys0302Service;
+import free.com.service.bscfunction.Bsc0010Service;
 import free.com.utils.CommonConstants;
 import free.com.utils.StringUtils;
 import free.com.utils.SystemEnum;
 import free.com.utils.UserEnum;
 
 /**
- * User Information Configure
+ * User Information Configure（向DB里面迁移功能还在完善中）
  *
  * @author cao
  *
@@ -34,7 +34,7 @@ import free.com.utils.UserEnum;
 public class Sty0000Controller {
 
 	@Autowired
-	private Sys0302Service service;
+	private Bsc0010Service service;
 
 	@Autowired
 	private Opinion opinion;

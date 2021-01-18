@@ -1,4 +1,4 @@
-package free.com.dao.system;
+package free.com.dao.bscfunction;
 
 import java.util.List;
 
@@ -8,14 +8,14 @@ import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
 import free.com.bean.Opinion;
-import free.com.bean.system.Sys0302ResultDto;
-import free.com.bean.system.Sys0302SearchDto;
+import free.com.bean.bscfunction.Bsc0010ResultDto;
+import free.com.bean.bscfunction.Bsc0010SearchDto;
 import free.com.common.CommonUtil;
 import free.com.common.SqlCommon;
 import free.com.utils.StringUtils;
 
 @Repository
-public class Sys0302Dao {
+public class Bsc0010Dao {
 
 
 
@@ -24,7 +24,7 @@ public class Sys0302Dao {
 		SqlCommon.sqlSession.save(opinion);
 	}
 
-	public List<Sys0302ResultDto> getResult(Sys0302SearchDto searchDto){
+	public List<Bsc0010ResultDto> getResult(Bsc0010SearchDto searchDto){
 		String sqlStr = "SELECT "
 				+ "t1.ID AS dataId"
 				+ ",t1.OPINION_CONTENT AS opinionText "
@@ -43,9 +43,9 @@ public class Sys0302Dao {
 			sqlStr = sqlStr + "WHERE t1.ID=" + searchDto.getDataId();
 		}
 		SQLQuery sql = SqlCommon.sqlSession.createSQLQuery(sqlStr);
-		sql.setResultTransformer(Transformers.aliasToBean(Sys0302ResultDto.class));
+		sql.setResultTransformer(Transformers.aliasToBean(Bsc0010ResultDto.class));
 		@SuppressWarnings("unchecked")
-		List<Sys0302ResultDto> list = sql.list();
+		List<Bsc0010ResultDto> list = sql.list();
 
 		return list;
 	}

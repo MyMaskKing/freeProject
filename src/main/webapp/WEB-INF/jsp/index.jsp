@@ -107,10 +107,10 @@ window.LOGIN_TIME = new Date(timestamp);
 		<%-- index welcome information [Start] --%>
 		<div class="jumbotron">
 			<h3>
-				欢迎登陆Free Project！ <small>这是一个放飞自由的地方。</small>
+				欢迎来到这个世界 <small>年轻的我们总要做些什么</small>
 			</h3>
 			<p>
-				<a class="btn btn-primary btn-lg" role="button"> 更多功能敬请期待!</a>
+				<a class="btn btn-primary btn-lg" role="button"> 功能做成中ing</a>
 			</p>
 		</div>
 		<%-- index welcome information [End] --%>
@@ -185,7 +185,7 @@ window.LOGIN_TIME = new Date(timestamp);
 		<%-- Internet Web Plugs [End]  --%>
 	</div>
 	<%-- Search result area [End] --%>
-	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-right: 20px">
+	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 15px; padding-top: 5px;">
 		<c:import url="template/commonAction.jsp" />
 	</div>
 </div>

@@ -2,7 +2,7 @@
 	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <meta charset="UTF-8">
-<title>意见采集</title>
+<title>网站各功能建设管理</title>
 
 <%-- JSP Configure[Start] --%>
 <%@ page isELIgnored="false"%>
@@ -62,33 +62,68 @@
 <div style="padding: 10px;">
 	<%-- 意见收集[Start] --%>
 	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-		<table class="table table-condensed">
-			<caption>精简表格布局</caption>
-			<thead>
-				<tr>
-					<th>名称</th>
-					<th>城市</th>
-					<th>名称</th>
-					<th>名称</th>
-					<th>名称</th>
-					<th>名称</th>
-					<th>邮编</th>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="panel-group" id="accordion">
 			<c:forEach items="${bsc0000Result }" var="result" varStatus="resultIndex">
-				<tr>
-					<td>${result.dmpMenuMemo }</td>
-					<td>${result.dmpMenuCrtFlg }</td>
-					<td>${result.dmpMenuCrtEndFlg }</td>
-					<td>${result.dmpMenuCrtProcess }</td>
-					<td>${result.menuGroupName }</td>
-					<td>${result.menuName }</td>
-					<td>${result.menuMemo }</td>
-				</tr>
+			
+				<c:choose>
+               	 	<c:when test="${result.dmpMenuCrtEndFlg eq '1'}">
+            			<div class="panel panel-success">
+            		</c:when>
+            		<c:when test="${result.dmpMenuCrtFlg eq '1'}">
+            			<div class="panel panel-info">
+            		</c:when>
+            		<c:otherwise>
+            			<div class="panel panel-default">
+            		</c:otherwise>
+            	</c:choose>
+			    
+			        <div class="panel-heading">
+			            <h4 class="panel-title">
+			                <span class="label label-info">功能建设要求：</span>
+			                <a data-toggle="collapse" data-parent="#accordion" 
+			                href="#collapse${resultIndex.index }">
+			                ${result.dmpMenuMemo }
+			                <%-- 功能建设已经结束 --%>
+			                <c:choose>
+			               	 	<c:when test="${result.dmpMenuCrtEndFlg eq '1'}">
+			               	 		<span class="label label-success">功能建设已完成</span>
+			            		</c:when>
+			            		<c:when test="${result.dmpMenuCrtFlg eq '1'}">
+			            			<span class="label label-primary">功能建设中</span>
+			            		</c:when>
+			            	</c:choose>
+			                </a>
+			            </h4>
+			        </div>
+			        <div id="collapse${resultIndex.index }" class="panel-collapse collapse">
+			            <div class="panel-body">
+			            	<c:choose>
+			            		<c:when test="${result.dmpMenuCrtEndFlg eq '1'}">
+			            			<table>
+			            				<tr>
+			            					<td><span class="label label-default">菜单：</span>
+			            					<span class="label label-success">${result.menuGroupName}</span>
+			            					<button type="button" class="btn btn-link">→</button>
+			            					<span class="label label-info">${result.menuName}</span>
+			            					</td>
+			            				</tr>
+			            				<tr>
+			            					<td> <span class="label label-default">菜单功能：</span>${result.menuMemo}</td>
+			            				</tr>
+			            			</table>
+			            		</c:when>
+			            		<c:when test="${result.dmpMenuCrtFlg eq '1'}">
+			            			功能还在建设中,请耐心等待。
+			            		</c:when>
+			            		<c:otherwise>
+			            			您的功能建设要求未被采用，还请谅解，如果有疑问，请利用菜单【基础功能→用户留言】。
+			            		</c:otherwise>
+			            	</c:choose>
+			            </div>
+			        </div>
+			    </div>
 			</c:forEach>
-			</tbody>
-		</table>
+		</div>
 	</div>
 	<%-- 意见收集[End] --%>
 

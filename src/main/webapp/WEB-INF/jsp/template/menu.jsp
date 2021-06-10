@@ -119,7 +119,10 @@
 			</div>
 			<div class="navbar-header" style="float:right">
 				<div style="padding-top:5px">
-					<span style="color:#ffffff">欢迎您：<%=session.getAttribute("accountNm")%></span>
+					<span style="color:#ffffff">欢迎您：<span class="glyphicon glyphicon-user"></span><%=session.getAttribute("accountNm")%></span>
+					<a data-target="#" href="<%=request.getContextPath()%>/login/logout">
+						<span class="badge pull-right" style="background-color:#e96f6f"><span class="glyphicon glyphicon-off">退出</span>
+					</a>
 					<br>
 					<span style="color:#ffd400">登录时间：<%=session.getAttribute("loginTime_HMS")%></span>
 				</div>

@@ -152,7 +152,3 @@ function executeSys30201Upd(dataId){
 		</div>
 	</div>
 </div>
-
-<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-	<c:import url="../template/commonAction.jsp" />
-</div>

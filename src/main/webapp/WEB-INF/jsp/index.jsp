@@ -186,6 +186,6 @@ window.LOGIN_TIME = new Date(timestamp);
 	</div>
 	<%-- Search result area [End] --%>
 	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 15px; padding-top: 5px;">
-		<c:import url="template/commonAction.jsp" />
+		
 	</div>
 </div>

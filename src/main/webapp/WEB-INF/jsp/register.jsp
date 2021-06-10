@@ -12,15 +12,15 @@
 <script type="text/javascript" src="../js/main.js"></script>
 <%-- include Js and Css and so on of BootStrap file [Start]--%>
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/bootstrap-js/jquery-3.2.1.min.js"></script>
+	src="<%=request.getContextPath()%>/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/bootstrap-js/bootstrap.min.js"></script>
+	src="<%=request.getContextPath()%>/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/bootstrap-js/bootstrap-datetimepicker.min.js"></script>
+	src="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.js"></script>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap-js/bootstrap.min.css">
+	href="<%=request.getContextPath()%>/bootstrap/bootstrap.min.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/bootstrap-js/bootstrap-datetimepicker.min.css">
+	href="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/style/style.css">
 <%-- include Js and Css and so on of BootStrap file [End]--%>

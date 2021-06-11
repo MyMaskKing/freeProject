@@ -6,21 +6,12 @@
 <meta charset="UTF-8">
 <%-- include Js and Css and so on of BootStrap file [Start]--%>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap.esm.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap.rtl.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-grid.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-grid.rtl.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-reboot.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-reboot.rtl.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-theme.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-utilities.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-utilities.rtl.min.css">
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/style/style.css">
 <%-- include Js and Css and so on of BootStrap file [End]--%>
 

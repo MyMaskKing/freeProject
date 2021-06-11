@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <%-- include Js and Css and so on of BootStrap file [Start]--%>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.2.1.min.js"></script>

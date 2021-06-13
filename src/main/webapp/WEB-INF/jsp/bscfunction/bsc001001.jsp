@@ -101,14 +101,14 @@ function executeSys30201Upd(dataId){
 
 
 <div style="padding: 10px;">
-	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="panel panel-primary table-responsive">
 			<div class="panel-heading">意见箱</div>
 			<table class="table table-bordered table-condensed table-hover" style="word-break:break-all; word-wrap:break-all;table-layout: fixed;" >
 				<thead>
 					<tr>
 						<th class="text-right">No.</th>
-						<th class ="text-center" valign="middle" width="50%">建议内容</th>
+						<th class ="text-center" valign="middle" width="50%">留言内容</th>
 						<th class ="text-center" valign="middle" width="9%">提出时间</th>
 						<th class ="text-center" valign="middle" >提出者</th>
 						<th class ="text-center" valign="middle" width="9%">更新时间</th>
@@ -130,17 +130,17 @@ function executeSys30201Upd(dataId){
 						<td class ="text-center" valign="middle">
 							<c:choose>
 								<%-- 该条建议的所有者时，可以更新和删除 --%>
-								<c:when test="${sessionScope.userId eq bsc0010Result.insUserId}">
-									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${bsc0010Result.dataId })">修正</button>
+								<c:when test="${sessionScope.userId eq bsc0010Result.insUserId and sessionScope.userAuthor ne 1}">
+									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${bsc0010Result.dataId })">回答</button>
 									<button type="button" class="btn btn-primary"  onclick="showSys30201DelDialog(${bsc0010Result.dataId })">删除</button>
 								</c:when>
 								<%-- 管理员时，可以更新和删除 --%>
 								<c:when test="${sessionScope.userAuthor eq 5}">
-									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${bsc0010Result.dataId })">修正</button>
+									<button type="button" class="btn btn-default" onclick="executeSys30201Upd(${bsc0010Result.dataId })">回答</button>
 									<button type="button" class="btn btn-primary"  onclick="showSys30201DelDialog(${bsc0010Result.dataId })">删除</button>
 								</c:when>
 								<c:otherwise>
-									<span style="font-size:10px">他人提出的意见，您只能查看</span>
+									<span style="font-size:10px">他人或者体验者提出的留言，您只能查看</span>
 								</c:otherwise>
 							</c:choose>
 						</td>

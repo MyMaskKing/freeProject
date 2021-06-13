@@ -57,7 +57,7 @@ public class Bsc0010Dao {
 	public void update(Opinion opinion){
 		String sqlStr = "UPDATE t_opinion"
 				+ " SET "
-				+ " OPINION_CONTENT = ?,"
+				+ " OPINION_CONTENT = CONCAT(OPINION_CONTENT,?),"
 				+ " UPD_DATE = now(),"
 				+ " UPD_USER_ID = ?"
 				+ " WHERE ID = ?";

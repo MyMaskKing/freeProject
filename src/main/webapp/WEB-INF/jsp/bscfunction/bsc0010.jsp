@@ -53,7 +53,7 @@
 		// All button enable
 		setSearchDisabled();
 		setUpdateDisabled();
-		setRegisteredEnabled("提交意见");
+		setRegisteredEnabled("提交留言");
 		setBackBtnEnabled("返回首页");
 		setBackUrl('<%=request.getContextPath()%>/index/init');
 		getInputSizeByMaxLength("opinionText","opinionInputText");
@@ -73,10 +73,11 @@
 	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
 		<form role="form" id="commonForm" method="post">
 			<div class="form-group">
-				<label for="name">意见收集处</label>
+				<label for="name">留言收集处</label>
 				<textarea class="form-control" style="height:350px" placeholder="请输入您需要解决的问题"
 					name="opinionText" maxlength="1000" id="opinionText"></textarea>
-				<p class="help-block">感谢您提出的宝贵意见，我们将会对其进行分析并修正。
+				<p class="help-block">感谢您的留言，我们会进行认真的分析后回复您。
+                                      留言提交后不可修改，可通过【留言箱>>回答】按钮进行追加留言。
 				<span class="help-block" style="float:right">还可以输入
 				<span  id="opinionInputText"></span>
 				字
@@ -86,7 +87,7 @@
 			</div>
 		</form>
 		
-		<button type="button" class="btn btn-default" onclick="transitionHtml(null,'result')">意见箱</button>
+		<button type="button" class="btn btn-default" onclick="transitionHtml(null,'result')">留言箱</button>
 	</div>
 	<%-- 意见收集[End] --%>
 

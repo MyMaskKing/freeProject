@@ -47,7 +47,7 @@ public class Bsc0010Controller {
 	@RequestMapping("registered")
 	public String registered(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Bsc0010From from = CommonUtil.getBean(Bsc0010From.class, request);
-		opinion.setOpinionContent(from.getOpinionText().trim());
+		opinion.setOpinionContent("<span class=\"label label-primary\">首次入力内容：</span><br/>" + from.getOpinionText().trim());
 		opinion.setUpdUserId(CommonUtil.getUserInfo().getUserId());
 		opinion.setUpdDate(CommonUtil.getSysDate());
 		opinion.setInsUserId(CommonUtil.getUserInfo().getUserId());
@@ -98,11 +98,12 @@ public class Bsc0010Controller {
 	@RequestMapping("update")
 	public String update(HttpServletRequest request, HttpServletResponse response, Model model) {
 		Opinion opinion = CommonUtil.getBean(Opinion.class, request);
-		StringBuffer bf = new StringBuffer(opinion.getOpinionContent());
-		if (opinion.getOpinionContent().contains("-----------------------------------------------------------")) {
-			bf.append("\r\n回复者：" + CommonUtil.getUserInfo().getAccountName());
-			bf.append("    回复时间：" + CommonUtil.getSysDateText());
-		}
+		StringBuffer bf = new StringBuffer();
+		bf.append("\r\n-----------------------------------------------------------\r\n");
+		bf.append("<span class='label label-warning'>回答交互内容：</span><br/>");
+		bf.append(opinion.getOpinionContent());
+		bf.append("\r\n回答者：" + CommonUtil.getUserInfo().getAccountName());
+		bf.append("    回答时间：" + CommonUtil.getSysDateText());
 		opinion.setOpinionContent(bf.toString());
 		service.update(opinion);
 		return "redirect:/bsc0010/result";

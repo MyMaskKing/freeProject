@@ -25,11 +25,11 @@
     <dependencies>
         <!-- 2020/04/28 Solr高效检索追加 Start -->
         <!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
             <version>8.5.1</version>
-        </dependency>
+        </dependency> -->
         <!-- 2020/04/28 Solr高效检索追加 End -->
         <!-- **Loading Servlet ApI [Start] -->
         <dependency>
@@ -129,7 +129,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.11</version>
+            <version>8.0.22</version>
             <!-- <version>5.1.42</version> -->
         </dependency>
         <!-- C3P0 依赖 -->

@@ -52,7 +52,7 @@
 		loadDateComponent();
 		// All button enable
 		setSearchDisabled();
-		setUpdateEnabled("更新");
+		setUpdateEnabled("回答");
 		setRegisteredDisabled();
 		setBackBtnEnabled("返回");
 		setBackUrl('<%=request.getContextPath()%>/bsc0010/result');
@@ -64,21 +64,39 @@
 	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
 		<form role="form" id="commonForm" method="post">
 			<div class="form-group">
-				<label for="name">意见收集处</label>
-				<input type="hidden" name="id" value="${bsc0010Result.dataId }">
-				<textarea class="form-control" style="height:350px"
-					name="opinionContent" maxlength="100000" id="opinionText">${bsc0010Result.opinionText }</textarea>
-				<span class="help-block" style="float:right">还可以输入
-				<span  id="opinionInputText"></span>
-				字
-				</span>
+				<div class="panel panel-primary">
+				    <div class="panel-heading">
+				        <h3 class="panel-title">
+						<span class="label label-info">回复</span>
+						</h3>
+				    </div>
+				    <div class="panel-body">
+						<input type="hidden" name="id" value="${bsc0010Result.dataId }">
+						<textarea class="form-control" style="height:350px"
+							name="opinionContent" maxlength="100000" id="opinionText"></textarea>
+						<span class="help-block" style="float:right">还可以输入
+						<span  id="opinionInputText"></span>
+						字
+						</span>
+				    </div>
+				</div>
 			</div>
 			<p class="help-block">
-				如果您要进行回复，请在【-----------------------------------------------------------】下面进行内容的回复。
-				<BR>
-				如果您要需要修改您提出的意见，请删除【-----------------------------------------------------------】。
+				请您对引用内容进行回复。
 			</p>
 		</form>
+		<div class="panel panel-info">
+		    <div class="panel-heading">
+		        <h3 class="panel-title">
+				<span class="label label-primary">引用</span>
+				</h3>
+		    </div>
+		    <div class="panel-body">
+				<div class="well well-lg">
+					<pre>${bsc0010Result.opinionText }</pre>
+				</div>
+		    </div>
+		</div>
 	</div>
 	<%-- 意见收集[End] --%>
 

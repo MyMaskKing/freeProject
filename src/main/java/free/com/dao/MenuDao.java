@@ -17,7 +17,7 @@ public class MenuDao {
 		String sql = "SELECT * FROM "
 				+ "T_MENU "
 				+ "WHERE MENU_GROUP_AUTHORITY <= CAST( ? as SIGNED   INTEGER) "
-				+ "AND MENU_AUTHORITY <= CAST( ? as SIGNED   INTEGER) ORDER BY SORT_NO";
+				+ "AND MENU_AUTHORITY <= CAST( ? as SIGNED   INTEGER) ORDER BY MENU_GROUP_AUTHORITY,MENU_AUTHORITY,SORT_NO ";
 		SQLQuery sqlQuery = DaoCommon.sqlSession.createSQLQuery(sql);
 		sqlQuery.setString(0, user.getMenuGroupAuthority());
 		sqlQuery.setString(1, user.getMenuSubMaxAuthority());

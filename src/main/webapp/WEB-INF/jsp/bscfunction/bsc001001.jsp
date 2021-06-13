@@ -71,7 +71,7 @@ function showSys30201DelDialog(dataId){
 					Window.COMMON_DIALOGS1_HTML = 
 						"<div class='well'>"
 						+ "<ul class='list-group'>"
-						+ "<li class='list-group-item'>建议内容: "+data.bsc0010UpdOrDelDto[0].opinionText+"</li>"
+						+ "<li class='list-group-item'><pre>"+data.bsc0010UpdOrDelDto[0].opinionText+"</pre></li>"
 						+ "</ul>"
 						+ "</div>";
 					Window.AJAX_JSON_DATA='flg=del&dataId='+data.bsc0010UpdOrDelDto[0].dataId
@@ -94,7 +94,7 @@ function showSys30201DelDialog(dataId){
 function executeSys30201Upd(dataId){
 	Window.AJAX_JSON_DATA='flg=upd&dataId='+dataId
 	transitionHtml(null,'result','commonDialogs1Ajax');
-	setActionMode("更新")
+	setActionMode("回答")
 }
 </script>
 <%-- Myself define Js[End] --%>

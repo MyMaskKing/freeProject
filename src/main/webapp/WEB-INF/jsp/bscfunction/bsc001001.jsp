@@ -99,7 +99,6 @@ function executeSys30201Upd(dataId){
 </script>
 <%-- Myself define Js[End] --%>
 
-
 <div style="padding: 10px;">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="panel panel-primary table-responsive">

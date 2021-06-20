@@ -102,7 +102,7 @@ function executeSys30201Upd(dataId){
 <div style="padding: 10px;">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="panel panel-primary table-responsive">
-			<div class="panel-heading">意见箱</div>
+			<div class="panel-heading">留言箱</div>
 			<table class="table table-bordered table-condensed table-hover" style="word-break:break-all; word-wrap:break-all;table-layout: fixed;" >
 				<thead>
 					<tr>

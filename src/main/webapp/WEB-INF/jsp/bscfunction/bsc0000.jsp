@@ -53,7 +53,7 @@
 		// All button enable
 		setSearchDisabled();
 		setUpdateDisabled();
-		setRegisteredEnabled("提交意见");
+		setRegisteredEnabled("提交需求");
 		setBackBtnEnabled("返回首页");
 		setBackUrl('<%=request.getContextPath()%>/index/init');
 	});

@@ -25,11 +25,11 @@
     <dependencies>
         <!-- 2020/04/28 Solr高效检索追加 Start -->
         <!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
-        <!-- <dependency>
+        <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
             <version>8.5.1</version>
-        </dependency> -->
+        </dependency>
         <!-- 2020/04/28 Solr高效检索追加 End -->
         <!-- **Loading Servlet ApI [Start] -->
         <dependency>
@@ -256,7 +256,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                    <warName>winssage</warName>
+                    <warName>freePj</warName>
                 </configuration>
             </plugin>
             <!-- eclipse插件, 设定wtp版本 -->

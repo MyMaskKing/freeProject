@@ -14,10 +14,15 @@ import free.com.utils.CommonConstants;
 public class MenuDao {
 
 	public List<Menu> init(User user) {
-		String sql = "SELECT * FROM "
+		String sql = "SELECT *,"
+				+ " ROW_NUMBER() OVER (" // Mysql8.0的组内排序
+				+ " PARTITION BY MENU_GROUP_ID" // PARTITION BY = GROUP BY
+				+ " ORDER BY SORT_NO ASC"
+				+ " ) as rn "
+				+ "FROM "
 				+ "T_MENU "
 				+ "WHERE MENU_GROUP_AUTHORITY <= CAST( ? as SIGNED   INTEGER) "
-				+ "AND MENU_AUTHORITY <= CAST( ? as SIGNED   INTEGER) ORDER BY MENU_GROUP_AUTHORITY,MENU_AUTHORITY,SORT_NO ";
+				+ "AND MENU_AUTHORITY <= CAST( ? as SIGNED   INTEGER) ";
 		SQLQuery sqlQuery = DaoCommon.sqlSession.createSQLQuery(sql);
 		sqlQuery.setString(0, user.getMenuGroupAuthority());
 		sqlQuery.setString(1, user.getMenuSubMaxAuthority());
